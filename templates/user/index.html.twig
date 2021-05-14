@@ -31,8 +31,8 @@
                 <td>{{ user.postcode }}</td>
                 <td>{{ user.telefoon }}</td>
                 <td>
-                    <a href="{{ path('user_show', {'id': user.id}) }}">show</a><br>
-                    <a href="{{ path('user_reset_password', {'id': user.id}) }}">Reset password</a>
+                    <a href="{{ path('user_show', {'id': user.id}) }}">Gebruiker Bekijken</a><br>
+                    <a href="{{ path('user_reset_password', {'id': user.id}) }}">Wachtwoord Wijzigen</a>
                 </td>
             </tr>
         {% else %}

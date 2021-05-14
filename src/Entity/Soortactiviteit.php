@@ -44,6 +44,11 @@ class Soortactiviteit
      */
     private $activiteiten;
 
+    /**
+     * @ORM\Column(type="text", nullable=true)
+     */
+    private $beschrijving;
+
     public function __construct()
     {
         $this->activiteiten = new ArrayCollection();
@@ -128,6 +133,18 @@ class Soortactiviteit
                 $activiteiten->setSoort(null);
             }
         }
+
+        return $this;
+    }
+
+    public function getBeschrijving(): ?string
+    {
+        return $this->beschrijving;
+    }
+
+    public function setBeschrijving(?string $beschrijving): self
+    {
+        $this->beschrijving = $beschrijving;
 
         return $this;
     }

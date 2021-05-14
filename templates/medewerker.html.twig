@@ -39,15 +39,15 @@
                     <ul class="nav navbar-nav">
 
                         {% block menu %}
-                            <li class="active"><a href="{{ path('activiteitenoverzicht') }}">home</a></li>
-                            <li><a href="{{ path('beheer') }}"><span class="badge">{{ activiteiten|length }}</span>beheer</a></li>
-                            <li><a href="{{ path('nieuwSoortActiviteit') }}">soort</a></li>
-                            <li><a href="{{ path('user_index') }}">gebruikers</a></li>
+                            <li class="active"><a href="{{ path('activiteitenoverzicht') }}">Homepagina</a></li>
+                            <li><a href="{{ path('beheer') }}"><span class="badge"></span>Beheren</a></li>
+                            <li><a href="{{ path('nieuwSoortActiviteit') }}">Soorten</a></li>
+                            <li><a href="{{ path('user_index') }}">Gebruikers</a></li>
                         {% endblock %}
 
                     </ul>
                     <ul class="nav navbar-nav navbar-right">
-                        <li><a href="{{ path('logout') }}">{{ app.user.username }} uitloggen</a></li>
+                        <li><a href="{{ path('logout') }}">{{ app.user.username }} Uitloggen</a></li>
                     </ul>
                 </div>
             </div>

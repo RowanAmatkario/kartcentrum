@@ -13,6 +13,7 @@ class SoortactiviteitType extends AbstractType
     {
         $builder
             ->add('naam')
+            ->add('beschrijving')
             ->add('minLeeftijd')
             ->add('tijdsduur')
             ->add('prijs')
