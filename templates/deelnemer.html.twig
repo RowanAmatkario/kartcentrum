@@ -38,13 +38,13 @@
                 <div class="collapse navbar-collapse" id="myNavbar">
                     <ul class="nav navbar-nav">
                         {% block menu %}
-                            <li><a href="{{ path('activiteiten') }}">home</a></li>
-                            <li><a href="{{ path('user_edit') }}">account</a></li>
+                            <li><a href="{{ path('activiteiten') }}">Home</a></li>
+                            <li><a href="{{ path('user_edit') }}">Account</a></li>
                         {% endblock %}
 
                     </ul>
                     <ul class="nav navbar-nav navbar-right">
-                        <li><a href="{{ path('logout') }}">{{ app.user.username }} uitloggen</a></li>
+                        <li><a href="{{ path('logout') }}">{{ app.user.username }} Uitloggen</a></li>
                     </ul>
                 </div>
             </div>
