@@ -85,8 +85,8 @@ class DeelnemerController extends AbstractController
      */
     public function edit(Request $request,  UserPasswordEncoderInterface $passwordEncoder): Response
     {
-        $user = $this->getUser();
-        $form = $this->createForm(UserType::class, $user);
+        $task = $this->getUser();
+        $form = $this->createForm(UserType::class, $task);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
@@ -102,4 +102,5 @@ class DeelnemerController extends AbstractController
             'form' => $form->createView(),
         ]);
     }
+
 }

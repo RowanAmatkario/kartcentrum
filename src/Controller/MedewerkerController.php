@@ -77,30 +77,24 @@ class MedewerkerController extends AbstractController
     public function addAction(Request $request)
     {
         // create a user and a contact
-        $a=new Activiteit();
+        $nieuweActiviteit=new Activiteit();
 
-        $form = $this->createForm(ActiviteitType::class, $a);
-        $form->add('save', SubmitType::class, array('label'=>"voeg toe"));
-        //$form->add('reset', ResetType::class, array('label'=>"reset"));
-
+        $form = $this->createForm(ActiviteitType::class, $nieuweActiviteit);
+        $form->add('save', SubmitType::class);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
 
             $em = $this->getDoctrine()->getManager();
-            $em->persist($a);
+            $em->persist($nieuweActiviteit);
             $em->flush();
 
-            $this->addFlash(
-                'notice',
-                'activiteit toegevoegd!'
-            );
             return $this->redirectToRoute('beheer');
         }
         $activiteiten=$this->getDoctrine()
             ->getRepository('App:Activiteit')
             ->findAll();
-        return $this->render('medewerker/add.html.twig',array('form'=>$form->createView(),'naam'=>'toevoegen','aantal'=>count($activiteiten)
+        return $this->render('medewerker/add.html.twig',array('form'=>$form->createView()
         ));
     }
 
@@ -166,13 +160,13 @@ class MedewerkerController extends AbstractController
     public function nieuweSoortActiviteitToevoegenAction(Request $request)
     {
 
-        $a=new Soortactiviteit();
+        $nieuweActiviteit=new Soortactiviteit();
 
         $activiteiten=$this->getDoctrine()
             ->getRepository('App:Activiteit')
             ->findAll();
 
-        $form = $this->createForm(SoortactiviteitType::class, $a);
+        $form = $this->createForm(SoortactiviteitType::class, $nieuweActiviteit);
         $form->add('save', SubmitType::class, array('label'=>"voeg toe"));
 
         $form->handleRequest($request);

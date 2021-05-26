@@ -1,6 +1,5 @@
 {% extends 'medewerker.html.twig' %}
 
-{% form_theme form _self %}
 {% block button_widget %}
     {%- set attr = attr|merge({class: (attr.class|default('btn-primary') ~ ' btn')|trim}) -%}
     {%- if label is not same as(false) and label is empty -%}
@@ -21,7 +20,7 @@
 {%- endblock form_group_class %}
 
 {% block content %}
-    <h3>Activiteit {{ naam }}</h3>
+    <h3>Activiteit Toevoegen</h3>
 
         {{ form_start(form, {'attr': {'novalidate': 'novalidate'}}) }}
         {{ form_widget(form) }}

@@ -1,0 +1,37 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Chefkok index{% endblock %}
+
+{% block body %}
+    <h1>Chefkok index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Leeftijd</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for chefkok in chefkoks %}
+            <tr>
+                <td>{{ chefkok.id }}</td>
+                <td>{{ chefkok.name }}</td>
+                <td>{{ chefkok.leeftijd }}</td>
+                <td>
+                    <a href="{{ path('chefkok_show', {'id': chefkok.id}) }}">show</a>
+                    <a href="{{ path('chefkok_edit', {'id': chefkok.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="4">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('chefkok_new') }}">Create new</a>
+{% endblock %}

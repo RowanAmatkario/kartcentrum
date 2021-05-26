@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Edit Chefkok{% endblock %}
+
+{% block body %}
+    <h1>Edit Chefkok</h1>
+
+    {{ include('chefkok/_form.html.twig', {'button_label': 'Update'}) }}
+
+    <a href="{{ path('chefkok_index') }}">back to list</a>
+
+    {{ include('chefkok/_delete_form.html.twig') }}
+{% endblock %}
